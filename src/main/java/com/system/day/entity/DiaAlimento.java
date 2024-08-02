@@ -29,6 +29,10 @@ public class DiaAlimento {
 		this.idDia = idDia;
 		this.idAlimento = idAlimento;
 	}
+	
+	public DiaAlimento() {
+		
+	}
 
 	public DiaAlimentoKey getId() {
 		return id;

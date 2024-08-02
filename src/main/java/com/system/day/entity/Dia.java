@@ -1,6 +1,7 @@
 package com.system.day.entity;
 
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -33,6 +35,13 @@ public class Dia {
 	@JoinColumn(name ="CREATINA")
 	private Status creatina;
 	
+	
+	@OneToMany(mappedBy = "idDia")
+	private List<DiaAtividade> atividades;
+	
+	@OneToMany(mappedBy = "idDia")
+	private List<DiaAlimento> alimentos;
+		
 	public Dia() {}
 	
 	public Dia(Long id) {
@@ -62,7 +71,7 @@ public class Dia {
 
 	public void setValor_gasto(double valor_gasto) {
 		this.valor_gasto = valor_gasto;
-	}	
+	}
 
 	public Status getWhey() {
 		return whey;
@@ -79,4 +88,21 @@ public class Dia {
 	public void setCreatina(Status creatina) {
 		this.creatina = creatina;
 	}
+	
+	public List<DiaAtividade> getAtividades() {
+		return atividades;
+	}
+
+	public void setAtividades(List<DiaAtividade> atividades) {
+		this.atividades = atividades;
+	}
+
+	public List<DiaAlimento> getAlimentos() {
+		return alimentos;
+	}
+
+	public void setAlimentos(List<DiaAlimento> alimentos) {
+		this.alimentos = alimentos;
+	}
+
 }

@@ -21,6 +21,10 @@ public class DiaDTO {
 	private List<AtividadeHorario> atividades;
 	
 	private List<Long> alimentos;
+	
+	private List<DiaAlimentoDTO> diaAlimento;
+	
+	private List<DiaAtividadeDTO> diaAtividade;	
 
 	public Long getId() {
 		return id;
@@ -45,7 +49,7 @@ public class DiaDTO {
 	public void setValorGasto(double valorGasto) {
 		this.valorGasto = valorGasto;
 	}
-	
+
 	public List<Long> getAlimentos() {
 		return alimentos;
 	}
@@ -76,6 +80,22 @@ public class DiaDTO {
 
 	public void setAtividades(List<AtividadeHorario> atividades) {
 		this.atividades = atividades;
+	}
+	
+	public List<DiaAlimentoDTO> getDiaAlimento() {
+		return diaAlimento;
+	}
+
+	public void setDiaAlimento(List<DiaAlimentoDTO> diaAlimento) {
+		this.diaAlimento = diaAlimento;
+	}
+
+	public List<DiaAtividadeDTO> getDiaAtividade() {
+		return diaAtividade;
+	}
+
+	public void setDiaAtividade(List<DiaAtividadeDTO> diaAtividade) {
+		this.diaAtividade = diaAtividade;
 	}
 
 	static ModelMapper getModelMapper() {
