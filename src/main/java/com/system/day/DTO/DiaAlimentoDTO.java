@@ -2,12 +2,14 @@ package com.system.day.DTO;
 
 import org.modelmapper.ModelMapper;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.system.day.entity.Alimento;
 import com.system.day.entity.Dia;
 import com.system.day.entity.DiaAlimento;
 
 public class DiaAlimentoDTO {
 	
+	@JsonIgnore
 	private Dia idDia;
 	
 	private Alimento idAlimento;

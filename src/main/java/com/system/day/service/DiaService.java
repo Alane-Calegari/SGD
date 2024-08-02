@@ -53,7 +53,7 @@ public class DiaService {
 	public void create(DiaDTO diaDTO) {
 		Dia dia = getDiaMapper().convertToEntity(diaDTO);
 		getDiaRepository().save(dia);		
-		for (AtividadeHorario atividadeHorario: diaDTO.getAtividades()) {
+		for (AtividadeHorario atividadeHorario: diaDTO.getPostAtividades()) {
 			Dia idDia = new Dia(dia.getId());
 			Atividade idAtividade = new Atividade(atividadeHorario.getIdAtividade());
 			Horario idHorarioInicio = new Horario(atividadeHorario.getIdHorarioInicio());
@@ -77,7 +77,7 @@ public class DiaService {
 		dia.setId(diaDTO.getId());
 		dia.setDia(diaDTO.getDia());
 		dia.setValor_gasto(diaDTO.getValorGasto());
-		dia.setWhey(diaDTO.getWay());
+		dia.setWhey(diaDTO.getWhey());
 		dia.setCreatina(diaDTO.getCreatina());
 		getDiaRepository().save(dia);				
 	}

@@ -2,10 +2,8 @@ package com.system.day.DTO;
 
 import java.sql.Date;
 import java.util.List;
-
 import org.modelmapper.ModelMapper;
 import com.system.day.entity.Dia;
-import com.system.day.entity.DiaAlimento;
 import com.system.day.entity.Status;
 
 public class DiaDTO {
@@ -20,11 +18,13 @@ public class DiaDTO {
 	
 	private Status creatina;	
 	
-	private List<AtividadeHorario> atividades;
+	private List<AtividadeHorario> postAtividades;
 	
 	private List<Long> postAlimentos;
 	
 	private List<DiaAlimentoDTO> alimentos;
+	
+	private List<DiaAtividadeDTO> atividades;	
 
 	public Long getId() {
 		return id;
@@ -50,12 +50,12 @@ public class DiaDTO {
 		this.valorGasto = valorGasto;
 	}
 
-	public Status getWay() {
+	public Status getWhey() {
 		return whey;
 	}
 
-	public void setWay(Status way) {
-		this.whey = way;
+	public void setWhey(Status whey) {
+		this.whey = whey;
 	}
 
 	public Status getCreatina() {
@@ -66,12 +66,12 @@ public class DiaDTO {
 		this.creatina = creatina;
 	}
 
-	public List<AtividadeHorario> getAtividades() {
-		return atividades;
+	public List<AtividadeHorario> getPostAtividades() {
+		return postAtividades;
 	}
 
-	public void setAtividades(List<AtividadeHorario> atividades) {
-		this.atividades = atividades;
+	public void setPostAtividades(List<AtividadeHorario> postAtividades) {
+		this.postAtividades = postAtividades;
 	}
 
 	public List<Long> getPostAlimentos() {
@@ -90,13 +90,19 @@ public class DiaDTO {
 		this.alimentos = alimentos;
 	}
 
+	public List<DiaAtividadeDTO> getAtividades() {
+		return atividades;
+	}
+
+	public void setAtividades(List<DiaAtividadeDTO> atividades) {
+		this.atividades = atividades;
+	}
+
 	static ModelMapper getModelMapper() {
 		return new ModelMapper();
 	}
 	
 	public static DiaDTO convertToDTO(Dia entity) {
 		return getModelMapper().map(entity, DiaDTO.class);		
-	}
-
-	
+	}	
 }
