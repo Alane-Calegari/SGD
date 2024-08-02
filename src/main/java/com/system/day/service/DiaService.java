@@ -62,7 +62,7 @@ public class DiaService {
 			DiaAtividade diaAtividade = new DiaAtividade(diaAtividadeKey, idDia, idAtividade, idHorarioInicio, idHorarioFim);
 			getDiaAtividadeRepository().save(diaAtividade);
 		}
-		for(Long alimento: diaDTO.getAlimentos()) {
+		for(Long alimento: diaDTO.getPostAlimentos()) {
 			Dia idDia = new Dia(dia.getId());
 			Alimento idAlimento =  new Alimento(alimento);
 			DiaAlimentoKey diaAlimentoKey = new DiaAlimentoKey(idDia.getId(), idAlimento.getId());

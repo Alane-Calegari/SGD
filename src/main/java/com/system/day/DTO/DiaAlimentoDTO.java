@@ -1,7 +1,10 @@
 package com.system.day.DTO;
 
+import org.modelmapper.ModelMapper;
+
 import com.system.day.entity.Alimento;
 import com.system.day.entity.Dia;
+import com.system.day.entity.DiaAlimento;
 
 public class DiaAlimentoDTO {
 	
@@ -25,4 +28,11 @@ public class DiaAlimentoDTO {
 		this.idAlimento = idAlimento;
 	}
 	
+	static ModelMapper getModelMapper() {
+		return new ModelMapper();
+	}
+	
+	public static DiaAlimentoDTO convertToDTO(DiaAlimento diaAlimento) {
+		return getModelMapper().map(diaAlimento, DiaAlimentoDTO.class);
+	}
 }
