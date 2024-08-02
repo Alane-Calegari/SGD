@@ -2,13 +2,8 @@ package com.system.day.DTO;
 
 import java.sql.Date;
 import java.util.List;
-
 import org.modelmapper.ModelMapper;
-
-import com.system.day.entity.Alimento;
-import com.system.day.entity.Atividade;
 import com.system.day.entity.Dia;
-import com.system.day.entity.Horario;
 import com.system.day.entity.Status;
 
 public class DiaDTO {
@@ -17,19 +12,15 @@ public class DiaDTO {
 	
 	private Date dia;
 	
-	private Atividade atividade;
-	
 	private double valorGasto;
-	
-	private Horario horas_sono;
-	
-	private Alimento alimentos;
 	
 	private Status way;
 	
 	private Status creatina;	
 	
-	private List<Long> atividades;
+	private List<AtividadeHorario> atividades;
+	
+	private List<Long> alimentos;
 
 	public Long getId() {
 		return id;
@@ -47,14 +38,6 @@ public class DiaDTO {
 		this.dia = dia;
 	}
 
-	public Atividade getAtividade() {
-		return atividade;
-	}
-
-	public void setAtividade(Atividade atividade) {
-		this.atividade = atividade;
-	}
-
 	public double getValorGasto() {
 		return valorGasto;
 	}
@@ -62,20 +45,12 @@ public class DiaDTO {
 	public void setValorGasto(double valorGasto) {
 		this.valorGasto = valorGasto;
 	}
-
-	public Horario getHoras_sono() {
-		return horas_sono;
-	}
-
-	public void setHoras_sono(Horario horas_sono) {
-		this.horas_sono = horas_sono;
-	}
-
-	public Alimento getAlimentos() {
+	
+	public List<Long> getAlimentos() {
 		return alimentos;
 	}
 
-	public void setAlimentos(Alimento alimentos) {
+	public void setAlimentos(List<Long> alimentos) {
 		this.alimentos = alimentos;
 	}
 
@@ -94,12 +69,12 @@ public class DiaDTO {
 	public void setCreatina(Status creatina) {
 		this.creatina = creatina;
 	}
-	
-	public List<Long> getAtividades() {
+
+	public List<AtividadeHorario> getAtividades() {
 		return atividades;
 	}
 
-	public void setAtividades(List<Long> atividades) {
+	public void setAtividades(List<AtividadeHorario> atividades) {
 		this.atividades = atividades;
 	}
 
@@ -109,7 +84,5 @@ public class DiaDTO {
 	
 	public static DiaDTO convertToDTO(Dia entity) {
 		return getModelMapper().map(entity, DiaDTO.class);		
-	}
-
-	
+	}	
 }

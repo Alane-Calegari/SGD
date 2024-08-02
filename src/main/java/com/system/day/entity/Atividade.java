@@ -24,7 +24,6 @@ public class Atividade {
 		this.id = id;
 	}
 	
-
 	public Long getId() {
 		return id;
 	}

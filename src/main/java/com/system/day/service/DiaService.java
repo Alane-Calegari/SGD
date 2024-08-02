@@ -5,12 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.system.day.DTO.AtividadeHorario;
 import com.system.day.DTO.DiaDTO;
+import com.system.day.entity.Alimento;
 import com.system.day.entity.Atividade;
 import com.system.day.entity.Dia;
+import com.system.day.entity.DiaAlimento;
+import com.system.day.entity.DiaAlimentoKey;
 import com.system.day.entity.DiaAtividade;
 import com.system.day.entity.DiaAtividadeKey;
 import com.system.day.entity.Horario;
+import com.system.day.repository.DiaAlimentoRepository;
 import com.system.day.repository.DiaAtividadeRepository;
 import com.system.day.repository.DiaRepository;
 
@@ -29,6 +34,9 @@ public class DiaService {
 	@Autowired
 	private DiaAtividadeRepository diaAtividadeRepository;
 	
+	@Autowired
+	private DiaAlimentoRepository diaAlimentoRepository;
+	
 	public DiaDTO getById(Long id) {		
 		Dia dia = getDiaRepository().findById(id).orElseThrow(				
 				() -> new EntityNotFoundException("Não existe um dia com o id:" + id));
@@ -45,15 +53,21 @@ public class DiaService {
 	public void create(DiaDTO diaDTO) {
 		Dia dia = getDiaMapper().convertToEntity(diaDTO);
 		getDiaRepository().save(dia);		
-		for (Long atividade: diaDTO.getAtividades()) {
+		for (AtividadeHorario atividadeHorario: diaDTO.getAtividades()) {
 			Dia idDia = new Dia(dia.getId());
-			Atividade idAtividade = new Atividade(atividade);
-			Horario idHorario = new Horario();
-			DiaAtividadeKey diaAtividadeKey = new DiaAtividadeKey(dia.getId(), atividade);
-			DiaAtividade diaAtividade = new DiaAtividade(diaAtividadeKey, idDia, idAtividade, idHorario);
-			
-			
-			
+			Atividade idAtividade = new Atividade(atividadeHorario.getIdAtividade());
+			Horario idHorarioInicio = new Horario(atividadeHorario.getIdHorarioInicio());
+			Horario idHorarioFim = new Horario(atividadeHorario.getIdHorarioFim());
+			DiaAtividadeKey diaAtividadeKey = new DiaAtividadeKey(dia.getId(), atividadeHorario.getIdAtividade());
+			DiaAtividade diaAtividade = new DiaAtividade(diaAtividadeKey, idDia, idAtividade, idHorarioInicio, idHorarioFim);
+			getDiaAtividadeRepository().save(diaAtividade);
+		}
+		for(Long alimento: diaDTO.getAlimentos()) {
+			Dia idDia = new Dia(dia.getId());
+			Alimento idAlimento =  new Alimento(alimento);
+			DiaAlimentoKey diaAlimentoKey = new DiaAlimentoKey(idDia.getId(), idAlimento.getId());
+			DiaAlimento diaAlimento = new DiaAlimento(diaAlimentoKey, idDia, idAlimento);
+			getDiaAlimentoRepository().save(diaAlimento);
 		}
 	}
 	
@@ -62,10 +76,7 @@ public class DiaService {
 				() -> new EntityNotFoundException("Não existe um dia com o id:" + diaDTO.getId()));
 		dia.setId(diaDTO.getId());
 		dia.setDia(diaDTO.getDia());
-		dia.setAtividade(diaDTO.getAtividade());
-		dia.setValor_gasto(diaDTO.getValorGasto());
-		dia.setHoras_sono(diaDTO.getHoras_sono());
-		dia.setAlimento(diaDTO.getAlimentos());
+		dia.setValor_gasto(diaDTO.getValorGasto());		
 		dia.setWhey(diaDTO.getWay());
 		dia.setCreatina(diaDTO.getCreatina());
 		getDiaRepository().save(dia);				
@@ -87,5 +98,9 @@ public class DiaService {
 	
 	public DiaMapper getDiaMapper() {
 		return diaMapper;
+	}
+
+	public DiaAlimentoRepository getDiaAlimentoRepository() {
+		return diaAlimentoRepository;
 	}
 }

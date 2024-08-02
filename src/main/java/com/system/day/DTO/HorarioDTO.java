@@ -8,34 +8,24 @@ public class HorarioDTO {
 	
 	private Long id;
 	
-	private Date inicio;
-	
-	private Date termino;
-
-	public Date getInicio() {
-		return inicio;
-	}
+	private Date Hora;
 	
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public void setInicio(Date inicio) {
-		this.inicio = inicio;
+	public Date getHora() {
+		return Hora;
 	}
 
-	public Date getTermino() {
-		return termino;
+	public void setHora(Date hora) {
+		Hora = hora;
 	}
 
-	public void setTermino(Date termino) {
-		this.termino = termino;
-	}
-	
 	static ModelMapper getModelMapper() {
 		return new ModelMapper();
 	}

@@ -12,8 +12,10 @@ public class DiaAtividadeDTO {
 	
 	private Atividade idAtividade;
 	 
-	private Horario horario;
+	private Horario horarioInicio;
 
+	private Horario horarioFim;
+	
 	public Dia getIdDia() {
 		return idDia;
 	}
@@ -29,15 +31,23 @@ public class DiaAtividadeDTO {
 	public void setIdAtividade(Atividade idAtividade) {
 		this.idAtividade = idAtividade;
 	}
-
-	public Horario getHorario() {
-		return horario;
-	}
-
-	public void setHorario(Horario horario) {
-		this.horario = horario;
-	}
 	
+	public Horario getHorarioInicio() {
+		return horarioInicio;
+	}
+
+	public void setHorarioInicio(Horario horarioInicio) {
+		this.horarioInicio = horarioInicio;
+	}
+
+	public Horario getHorarioFim() {
+		return horarioFim;
+	}
+
+	public void setHorarioFim(Horario horarioFim) {
+		this.horarioFim = horarioFim;
+	}
+
 	static ModelMapper getModelMapper() {
 		return new ModelMapper();
 	}

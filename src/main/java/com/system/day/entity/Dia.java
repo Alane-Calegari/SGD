@@ -26,18 +26,6 @@ public class Dia {
 	private double valor_gasto;
 	
 	@ManyToOne
-	@JoinColumn(name = "HORAS_SONO")
-	private Horario horas_sono;
-	
-	@ManyToOne
-	@JoinColumn(name = "ALIMENTO")
-	private Alimento alimento;
-	
-	@ManyToOne
-	@JoinColumn(name = "ATIVIDADE")
-	private Atividade atividade;
-	
-	@ManyToOne
 	@JoinColumn(name ="WHEY")
 	private Status whey;	
 	
@@ -51,6 +39,7 @@ public class Dia {
 		this.id = id;		
 	}
 
+	
 	public Long getId() {
 		return id;
 	}
@@ -73,31 +62,7 @@ public class Dia {
 
 	public void setValor_gasto(double valor_gasto) {
 		this.valor_gasto = valor_gasto;
-	}
-
-	public Horario getHoras_sono() {
-		return horas_sono;
-	}
-
-	public void setHoras_sono(Horario horas_sono) {
-		this.horas_sono = horas_sono;
-	}
-
-	public Alimento getAlimento() {
-		return alimento;
-	}
-
-	public void setAlimento(Alimento alimento) {
-		this.alimento = alimento;
-	}
-
-	public Atividade getAtividade() {
-		return atividade;
-	}
-
-	public void setAtividade(Atividade atividade) {
-		this.atividade = atividade;
-	}
+	}	
 
 	public Status getWhey() {
 		return whey;

@@ -20,6 +20,15 @@ public class Alimento {
 	
 	@Column(name = "CALORIAS")
 	private int calorias;
+	
+	public Alimento() {
+		
+	}
+
+	public Alimento(Long id) {
+		super();
+		this.id = id;
+	}
 
 	public Long getId() {
 		return id;
