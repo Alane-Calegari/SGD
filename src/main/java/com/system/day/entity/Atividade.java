@@ -18,6 +18,8 @@ public class Atividade {
 	@Column(name = "DESCRICAO")
 	private String descricao;
 	
+	public Atividade() {}
+	
 	public Atividade(Long id) {
 		this.id = id;
 	}

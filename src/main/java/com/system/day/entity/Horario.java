@@ -23,9 +23,10 @@ public class Horario {
 	@Column(name = "TERMINO")
 	private Date termino;
 	
+	public Horario() {}
+	
 	public Horario(Long id) {
-		this.id = id;
-		
+		this.id = id;		
 	}
 
 	public Long getId() {

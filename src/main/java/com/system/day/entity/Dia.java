@@ -45,6 +45,8 @@ public class Dia {
 	@JoinColumn(name ="CREATINA")
 	private Status creatina;
 	
+	public Dia() {}
+	
 	public Dia(Long id) {
 		this.id = id;		
 	}

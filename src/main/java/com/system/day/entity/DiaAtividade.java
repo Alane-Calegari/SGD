@@ -28,6 +28,8 @@ public class DiaAtividade {
 	@JoinColumn(name = "ID_HORARIO")
 	private Horario idHorario;
 	
+	public DiaAtividade() {}
+	
 	public DiaAtividade(DiaAtividadeKey id, Dia idDia, Atividade idAtividade, Horario idHorario) {
 		this.id = id;
 		this.idDia = idDia;
