@@ -1,6 +1,8 @@
 package com.system.day.DTO;
 
 import org.modelmapper.ModelMapper;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.system.day.entity.Atividade;
 import com.system.day.entity.Dia;
 import com.system.day.entity.DiaAtividade;
@@ -8,6 +10,7 @@ import com.system.day.entity.Horario;
 
 public class DiaAtividadeDTO {
 	
+	@JsonIgnore
 	private Dia idDia;
 	
 	private Atividade idAtividade;
