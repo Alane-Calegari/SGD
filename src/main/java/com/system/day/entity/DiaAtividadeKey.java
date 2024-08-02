@@ -13,6 +13,10 @@ public class DiaAtividadeKey implements Serializable{
 	
 	private Long idAtividade;
 	
+	public DiaAtividadeKey() {
+		
+	}
+	
 	public DiaAtividadeKey(Long idDia, Long idAtividade) {
 		this.idDia = idDia;
 		this.idAtividade = idAtividade;
