@@ -77,7 +77,6 @@ public class DiaService {
 		dia.setId(diaDTO.getId());
 		dia.setDia(diaDTO.getDia());
 		dia.setValor_gasto(diaDTO.getValorGasto());
-		dia.setHoras_sono(diaDTO.getHoras_sono());
 		dia.setWhey(diaDTO.getWay());
 		dia.setCreatina(diaDTO.getCreatina());
 		getDiaRepository().save(dia);				

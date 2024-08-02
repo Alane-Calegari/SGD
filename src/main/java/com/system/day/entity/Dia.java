@@ -65,14 +65,6 @@ public class Dia {
 		this.valor_gasto = valor_gasto;
 	}
 
-	public Horario getHoras_sono() {
-		return horas_sono;
-	}
-
-	public void setHoras_sono(Horario horas_sono) {
-		this.horas_sono = horas_sono;
-	}
-
 	public Status getWhey() {
 		return whey;
 	}

@@ -4,11 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
-
-import com.system.day.entity.Alimento;
-import com.system.day.entity.Atividade;
 import com.system.day.entity.Dia;
-import com.system.day.entity.Horario;
 import com.system.day.entity.Status;
 
 public class DiaDTO {
@@ -49,14 +45,6 @@ public class DiaDTO {
 
 	public void setValorGasto(double valorGasto) {
 		this.valorGasto = valorGasto;
-	}
-
-	public Horario getHoras_sono() {
-		return horas_sono;
-	}
-
-	public void setHoras_sono(Horario horas_sono) {
-		this.horas_sono = horas_sono;
 	}
 
 	public List<Long> getAlimentos() {
