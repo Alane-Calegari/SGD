@@ -11,8 +11,7 @@ public class HorarioMapper {
 		Horario horario = new Horario();
 		
 		horario.setId(horarioDTO.getId());
-		horario.setInicio(horarioDTO.getInicio());
-		horario.setTermino(horarioDTO.getTermino());
+		horario.setHora(horarioDTO.getHora());
 		
 		return horario;
 	}

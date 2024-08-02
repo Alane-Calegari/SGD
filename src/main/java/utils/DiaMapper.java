@@ -13,10 +13,8 @@ public class DiaMapper {
 		
 		dia.setId(diaDTO.getId());
 		dia.setDia(diaDTO.getDia());
-		dia.setAtividade(diaDTO.getAtividade());
 		dia.setValor_gasto(diaDTO.getValorGasto());
 		dia.setHoras_sono(diaDTO.getHoras_sono());
-		dia.setAlimento(diaDTO.getAlimentos());
 		dia.setWhey(diaDTO.getWay());
 		dia.setCreatina(diaDTO.getCreatina());
 		

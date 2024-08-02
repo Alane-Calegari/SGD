@@ -10,11 +10,10 @@ public class DiaAtividadeMapper {
 	
 	public DiaAtividade converterToEntity(DiaAtividadeDTO diaAtividadeDTO) {
 		DiaAtividade diaAtividade = new DiaAtividade();
-		
 		diaAtividade.setIdDia(diaAtividadeDTO.getIdDia());
 		diaAtividade.setIdAtividade(diaAtividadeDTO.getIdAtividade());
-		diaAtividade.setHorario(diaAtividadeDTO.getHorario());
-		
+		diaAtividade.setIdHorarioInicio(diaAtividadeDTO.getHorarioInicio());
+		diaAtividade.setIdHorarioFim(diaAtividadeDTO.getHorarioFim());		
 		return diaAtividade;		
 	}
 }

@@ -43,8 +43,7 @@ public class HorarioService {
 		Horario horario = getHorarioRepository().findById(horarioDTO.getId()).orElseThrow(				
 				() -> new EntityNotFoundException("Não existe um horario com o id:" + horarioDTO.getId()));
 		horario.setId(horarioDTO.getId());
-		horario.setInicio(horarioDTO.getInicio());
-		horario.setTermino(horarioDTO.getTermino());	
+		horario.setHora(horarioDTO.getHora());
 		getHorarioRepository().save(horario);				
 	}
 	

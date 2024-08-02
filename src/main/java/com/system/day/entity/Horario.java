@@ -17,14 +17,14 @@ public class Horario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;	
 	
-	@Column(name = "INICIO")
-	private Date inicio;	
-	
-	@Column(name = "TERMINO")
-	private Date termino;
+	@Column(name = "HORA")
+	private Date hora;	
 	
 	public Horario(Long id) {
 		this.id = id;
+	}
+	
+	public Horario() {
 		
 	}
 
@@ -36,20 +36,11 @@ public class Horario {
 		this.id = id;
 	}
 
-	public Date getInicio() {
-		return inicio;
+	public Date getHora() {
+		return hora;
 	}
 
-	public void setInicio(Date inicio) {
-		this.inicio = inicio;
+	public void setHora(Date hora) {
+		this.hora = hora;
 	}
-
-	public Date getTermino() {
-		return termino;
-	}
-
-	public void setTermino(Date termino) {
-		this.termino = termino;
-	}
-
 }

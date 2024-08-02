@@ -22,7 +22,10 @@ public class Atividade {
 		this.id = id;
 	}
 	
-
+	public Atividade() {
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}

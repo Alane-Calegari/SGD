@@ -25,14 +25,22 @@ public class DiaAtividade {
 	private Atividade idAtividade;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_HORARIO")
-	private Horario idHorario;
+	@JoinColumn(name = "ID_HORARIO_INICIO")
+	private Horario idHorarioInicio;
 	
-	public DiaAtividade(DiaAtividadeKey id, Dia idDia, Atividade idAtividade, Horario idHorario) {
+	@ManyToOne
+	@JoinColumn(name = "ID_HORARIO_FIM")
+	private Horario idHorarioFim;
+	
+	public DiaAtividade(DiaAtividadeKey id, Dia idDia, Atividade idAtividade, Horario idHorarioInicio, Horario idHorarioFim) {
 		this.id = id;
 		this.idDia = idDia;
 		this.idAtividade = idAtividade;
-		this.idHorario = idHorario;
+		this.idHorarioInicio = idHorarioInicio;
+		this.idHorarioFim = idHorarioFim;
+	}
+	
+	public DiaAtividade() {
 		
 	}
 
@@ -60,12 +68,20 @@ public class DiaAtividade {
 		this.idAtividade = idAtividade;
 	}
 
-	public Horario getHorario() {
-		return idHorario;
+	public Horario getIdHorarioInicio() {
+		return idHorarioInicio;
 	}
 
-	public void setHorario(Horario idHorario) {
-		this.idHorario = idHorario;
+	public void setIdHorarioInicio(Horario idHorarioInicio) {
+		this.idHorarioInicio = idHorarioInicio;
+	}
+
+	public Horario getIdHorarioFim() {
+		return idHorarioFim;
+	}
+
+	public void setIdHorarioFim(Horario idHorarioFim) {
+		this.idHorarioFim = idHorarioFim;
 	}
 
 }
