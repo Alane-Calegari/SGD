@@ -25,6 +25,8 @@ public class DiaDTO {
 	private List<DiaAlimentoDTO> alimentos;
 	
 	private List<DiaAtividadeDTO> atividades;	
+	
+	public DiaDTO() {}
 
 	public Long getId() {
 		return id;
@@ -49,7 +51,7 @@ public class DiaDTO {
 	public void setValorGasto(double valorGasto) {
 		this.valorGasto = valorGasto;
 	}
-
+	
 	public Status getWhey() {
 		return whey;
 	}

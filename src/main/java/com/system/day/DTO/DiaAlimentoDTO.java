@@ -13,6 +13,8 @@ public class DiaAlimentoDTO {
 	private Dia idDia;
 	
 	private Alimento idAlimento;
+	
+	public DiaAlimentoDTO() {}
 
 	public Dia getIdDia() {
 		return idDia;

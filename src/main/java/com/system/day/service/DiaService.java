@@ -83,8 +83,16 @@ public class DiaService {
 	}
 	
 	public void delete(Long id) {
-		getDiaRepository().findById(id).orElseThrow(				
+		Dia dia = getDiaRepository().findById(id).orElseThrow(				
 				() -> new EntityNotFoundException("Não existe um dia com o id:" + id));
+		List<DiaAtividade> diaAtividades = getDiaAtividadeRepository().getByIdDia(dia);
+		List<DiaAlimento> diaAlimentos = getDiaAlimentoRepository().getByIdDia(dia);
+		for(DiaAtividade diaAtividade: diaAtividades) {
+			getDiaAtividadeRepository().delete(diaAtividade);
+		}
+		for(DiaAlimento diaAlimento: diaAlimentos) {
+			getDiaAlimentoRepository().delete(diaAlimento);
+		}
 		getDiaRepository().deleteById(id);		
 	}	
 	
