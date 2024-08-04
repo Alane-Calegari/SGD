@@ -1,7 +1,6 @@
 package com.system.day.DTO;
 
 import org.modelmapper.ModelMapper;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.system.day.entity.Alimento;
 import com.system.day.entity.Dia;
@@ -13,6 +12,10 @@ public class DiaAlimentoDTO {
 	private Dia idDia;
 	
 	private Alimento idAlimento;
+	
+	public DiaAlimentoDTO() {
+		
+	}
 
 	public Dia getIdDia() {
 		return idDia;

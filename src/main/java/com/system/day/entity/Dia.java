@@ -43,6 +43,7 @@ public class Dia {
 	private List<DiaAlimento> alimentos;
 		
 	public Dia() {}
+
 	
 	public Dia(Long id) {
 		this.id = id;		

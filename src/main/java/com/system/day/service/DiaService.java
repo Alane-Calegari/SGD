@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.system.day.DTO.AtividadeHorario;
+import com.system.day.DTO.DiaAlimentoDTO;
 import com.system.day.DTO.DiaDTO;
 import com.system.day.entity.Alimento;
 import com.system.day.entity.Atividade;
@@ -62,9 +63,9 @@ public class DiaService {
 			DiaAtividade diaAtividade = new DiaAtividade(diaAtividadeKey, idDia, idAtividade, idHorarioInicio, idHorarioFim);
 			getDiaAtividadeRepository().save(diaAtividade);
 		}
-		for(Long alimento: diaDTO.getPostAlimentos()) {
+		for(DiaAlimentoDTO alimento: diaDTO.getPostAlimentos()) {
 			Dia idDia = new Dia(dia.getId());
-			Alimento idAlimento =  new Alimento(alimento);
+			Alimento idAlimento =  new Alimento(alimento.getIdAlimento().getId());
 			DiaAlimentoKey diaAlimentoKey = new DiaAlimentoKey(idDia.getId(), idAlimento.getId());
 			DiaAlimento diaAlimento = new DiaAlimento(diaAlimentoKey, idDia, idAlimento);
 			getDiaAlimentoRepository().save(diaAlimento);
