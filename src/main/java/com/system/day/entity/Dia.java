@@ -25,7 +25,7 @@ public class Dia {
 	private Date dia;	
 		
 	@Column(name = "VALOR_GASTO")
-	private double valor_gasto;
+	private double valorGasto;
 	
 	@ManyToOne
 	@JoinColumn(name ="WHEY")
@@ -43,66 +43,82 @@ public class Dia {
 	private List<DiaAlimento> alimentos;
 		
 	public Dia() {}
+
 	
 	public Dia(Long id) {
 		this.id = id;		
 	}
 
-	
+
 	public Long getId() {
 		return id;
 	}
+
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+
 	public Date getDia() {
 		return dia;
 	}
+
 
 	public void setDia(Date dia) {
 		this.dia = dia;
 	}
 
-	public double getValor_gasto() {
-		return valor_gasto;
+
+	public double getValorGasto() {
+		return valorGasto;
 	}
 
-	public void setValor_gasto(double valor_gasto) {
-		this.valor_gasto = valor_gasto;
+
+	public void setValorGasto(double valorGasto) {
+		this.valorGasto = valorGasto;
 	}
+
 
 	public Status getWhey() {
 		return whey;
 	}
 
+
 	public void setWhey(Status whey) {
 		this.whey = whey;
 	}
+
 
 	public Status getCreatina() {
 		return creatina;
 	}
 
+
 	public void setCreatina(Status creatina) {
 		this.creatina = creatina;
 	}
-	
+
+
 	public List<DiaAtividade> getAtividades() {
 		return atividades;
 	}
+
 
 	public void setAtividades(List<DiaAtividade> atividades) {
 		this.atividades = atividades;
 	}
 
+
 	public List<DiaAlimento> getAlimentos() {
 		return alimentos;
 	}
+
 
 	public void setAlimentos(List<DiaAlimento> alimentos) {
 		this.alimentos = alimentos;
 	}
 
+	
+	
 }

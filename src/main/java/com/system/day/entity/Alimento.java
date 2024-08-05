@@ -26,7 +26,6 @@ public class Alimento {
 	}
 
 	public Alimento(Long id) {
-		super();
 		this.id = id;
 	}
 

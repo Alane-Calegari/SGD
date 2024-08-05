@@ -20,14 +20,14 @@ public class DiaDTO {
 	
 	private List<AtividadeHorario> postAtividades;
 	
-	private List<Long> postAlimentos;
+	private List<DiaAlimentoDTO> postAlimentos;
 	
 	private List<DiaAlimentoDTO> alimentos;
 	
 	private List<DiaAtividadeDTO> atividades;	
 	
 	public DiaDTO() {}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -76,11 +76,11 @@ public class DiaDTO {
 		this.postAtividades = postAtividades;
 	}
 
-	public List<Long> getPostAlimentos() {
+	public List<DiaAlimentoDTO> getPostAlimentos() {
 		return postAlimentos;
 	}
 
-	public void setPostAlimentos(List<Long> postAlimentos) {
+	public void setPostAlimentos(List<DiaAlimentoDTO> postAlimentos) {
 		this.postAlimentos = postAlimentos;
 	}
 
